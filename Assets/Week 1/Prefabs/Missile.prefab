@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -6631188197481915693}
   - component: {fileID: 8865236886792614200}
   - component: {fileID: 4820290658894500150}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Missile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 086816bf5312b4941a1f8308fc1425c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 10
 --- !u!50 &8865236886792614200
 Rigidbody2D:
   serializedVersion: 4
