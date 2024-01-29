@@ -19,15 +19,9 @@ public class Bow : MonoBehaviour
         // Rotates bow based on player input
         float direction = Input.GetAxis("Horizontal");
         transform.Rotate(0, 0, direction * speed * Time.deltaTime);
-
-        // Shoot arrow if player presses space
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            Debug.Log("Shot.");
-        }
     }
 
-    private void drawArrow()
+    public void drawArrow()
     {
         // Make an arrow appear on the bow
         Instantiate(arrow, transform.position, transform.rotation);
