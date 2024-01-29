@@ -10,7 +10,7 @@ public class Bow : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        drawArrow();
+        DrawArrow();
     }
 
     // Update is called once per frame
@@ -21,7 +21,7 @@ public class Bow : MonoBehaviour
         transform.Rotate(0, 0, direction * speed * Time.deltaTime);
     }
 
-    public void drawArrow()
+    public void DrawArrow()
     {
         // Make an arrow appear on the bow
         Instantiate(arrow, transform.position, transform.rotation);

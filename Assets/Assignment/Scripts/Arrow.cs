@@ -40,7 +40,35 @@ public class Arrow : MonoBehaviour
         Destroy(gameObject);
 
         // Have the bow spawn a new arrow
-        GameObject.Find("Bow").GetComponent<Bow>().drawArrow();
+        GameObject.Find("Bow").GetComponent<Bow>().DrawArrow();
+
+        // Add to the shot order
+        int objectShot = 0;
+
+        switch (collision.gameObject.ToString())
+        {
+            case "Red Target (UnityEngine.GameObject)":
+                objectShot = 1;
+                break;
+
+            case "Yellow Target (UnityEngine.GameObject)":
+                objectShot = 2;
+                break;
+
+            case "Green Target (UnityEngine.GameObject)":
+                objectShot = 3;
+                break;
+
+            case "Blue Target (UnityEngine.GameObject)":
+                objectShot = 4;
+                break;
+
+            case "Fence (UnityEngine.GameObject)":
+                objectShot = 0;
+                break;
+        }
+
+        GameObject.Find("Simon Says").GetComponent<SimonSays>().AddToOrder(objectShot);
     }
 
     private void FixedUpdate()

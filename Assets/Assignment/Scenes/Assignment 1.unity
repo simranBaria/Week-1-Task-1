@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 180838343}
   - component: {fileID: 180838346}
   - component: {fileID: 180838345}
+  - component: {fileID: 180838347}
   m_Layer: 8
   m_Name: Green Target
   m_TagString: Untagged
@@ -202,7 +203,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 180838342}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -3.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -280,7 +281,23 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 7
+--- !u!114 &180838347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 180838342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd706f0ada9a64f9da2533c70014ce8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultSprite: {fileID: 21300000, guid: cc7738495f04c4fefa9f41e1d639cf95, type: 3}
+  hitSprite: {fileID: 21300000, guid: 3607835b61fac49edb1f9a24b5cf1f58, type: 3}
+  on: 1
+  time: 60
 --- !u!1 &526519861
 GameObject:
   m_ObjectHideFlags: 0
@@ -2393,6 +2410,7 @@ GameObject:
   - component: {fileID: 798975045}
   - component: {fileID: 798975048}
   - component: {fileID: 798975047}
+  - component: {fileID: 798975049}
   m_Layer: 8
   m_Name: Yellow Target
   m_TagString: Untagged
@@ -2460,7 +2478,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 798975044}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 3.5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2538,7 +2556,23 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 7
+--- !u!114 &798975049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 798975044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd706f0ada9a64f9da2533c70014ce8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultSprite: {fileID: 21300000, guid: 8c3181d77f5af4c8c8d1ee7eb98e394b, type: 3}
+  hitSprite: {fileID: 21300000, guid: 3009a8dc9e0074d5093697dee80c26d3, type: 3}
+  on: 1
+  time: 60
 --- !u!1 &820585305
 GameObject:
   m_ObjectHideFlags: 0
@@ -2551,6 +2585,7 @@ GameObject:
   - component: {fileID: 820585306}
   - component: {fileID: 820585309}
   - component: {fileID: 820585308}
+  - component: {fileID: 820585310}
   m_Layer: 8
   m_Name: Blue Target
   m_TagString: Untagged
@@ -2618,7 +2653,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 820585305}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -3.5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2696,7 +2731,23 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 7
+--- !u!114 &820585310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 820585305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd706f0ada9a64f9da2533c70014ce8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultSprite: {fileID: 21300000, guid: c3a0c6144d0664dc7bcdf78ba8f6ef0a, type: 3}
+  hitSprite: {fileID: 21300000, guid: a7f80010307da4ebd9bc190ce14897e3, type: 3}
+  on: 1
+  time: 60
 --- !u!1 &866918382
 GameObject:
   m_ObjectHideFlags: 0
@@ -3821,7 +3872,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 7
 --- !u!19719996 &1008039758
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -3916,6 +3967,7 @@ GameObject:
   - component: {fileID: 1244012057}
   - component: {fileID: 1244012060}
   - component: {fileID: 1244012059}
+  - component: {fileID: 1244012061}
   m_Layer: 8
   m_Name: Red Target
   m_TagString: Untagged
@@ -3983,7 +4035,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1244012056}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 3.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -4061,15 +4113,80 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 7
+--- !u!114 &1244012061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1244012056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd706f0ada9a64f9da2533c70014ce8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultSprite: {fileID: 21300000, guid: 52355f457e3c8408588f07f45e1c0da3, type: 3}
+  hitSprite: {fileID: 21300000, guid: 3ab1e84f115b74cf8abb6683f4f06c15, type: 3}
+  on: 1
+  time: 60
+--- !u!1 &1992230353
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1992230355}
+  - component: {fileID: 1992230354}
+  m_Layer: 0
+  m_Name: Simon Says
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1992230354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1992230353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f0c972c17cda43c8b146e15ecfdc747, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  red: {fileID: 1244012056}
+  yellow: {fileID: 798975044}
+  green: {fileID: 180838342}
+  blue: {fileID: 820585305}
+--- !u!4 &1992230355
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1992230353}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 687343184}
   - {fileID: 1205313698}
+  - {fileID: 866918384}
   - {fileID: 1244012058}
   - {fileID: 798975046}
   - {fileID: 180838344}
   - {fileID: 820585307}
-  - {fileID: 866918384}
+  - {fileID: 1992230355}
