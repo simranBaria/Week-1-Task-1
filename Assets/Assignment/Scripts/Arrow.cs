@@ -21,16 +21,13 @@ public class Arrow : MonoBehaviour
     void Update()
     {
         // Only rotate if not shot
-        if(!shot)
+        if (!shot)
         {
             float direction = Input.GetAxis("Horizontal");
             transform.Rotate(0, 0, direction * turnSpeed * Time.deltaTime);
 
             // Shoot if the player presses space
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                shot = true;
-            }
+            if (Input.GetKeyDown(KeyCode.Space)) shot = true;
         }
     }
 
@@ -39,12 +36,8 @@ public class Arrow : MonoBehaviour
         // Destroy the arrow upon collision
         Destroy(gameObject);
 
-        // Have the bow spawn a new arrow
-        GameObject.Find("Bow").GetComponent<Bow>().DrawArrow();
-
-        // Add to the shot order
+        // Find what the arrow collided with
         int objectShot = 0;
-
         switch (collision.gameObject.ToString())
         {
             case "Red Target (UnityEngine.GameObject)":
@@ -68,6 +61,7 @@ public class Arrow : MonoBehaviour
                 break;
         }
 
+        // Add to the shot order
         GameObject.Find("Simon Says").GetComponent<SimonSays>().AddToOrder(objectShot);
     }
 
