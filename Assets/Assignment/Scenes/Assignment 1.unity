@@ -296,8 +296,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   defaultSprite: {fileID: 21300000, guid: cc7738495f04c4fefa9f41e1d639cf95, type: 3}
   hitSprite: {fileID: 21300000, guid: 3607835b61fac49edb1f9a24b5cf1f58, type: 3}
-  on: 1
-  time: 60
 --- !u!1 &249114713
 GameObject:
   m_ObjectHideFlags: 0
@@ -2739,8 +2737,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   defaultSprite: {fileID: 21300000, guid: 8c3181d77f5af4c8c8d1ee7eb98e394b, type: 3}
   hitSprite: {fileID: 21300000, guid: 3009a8dc9e0074d5093697dee80c26d3, type: 3}
-  on: 1
-  time: 60
 --- !u!1 &820585305
 GameObject:
   m_ObjectHideFlags: 0
@@ -2914,8 +2910,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   defaultSprite: {fileID: 21300000, guid: c3a0c6144d0664dc7bcdf78ba8f6ef0a, type: 3}
   hitSprite: {fileID: 21300000, guid: a7f80010307da4ebd9bc190ce14897e3, type: 3}
-  on: 1
-  time: 60
 --- !u!1 &866918382
 GameObject:
   m_ObjectHideFlags: 0
@@ -2927,6 +2921,8 @@ GameObject:
   - component: {fileID: 866918384}
   - component: {fileID: 866918383}
   - component: {fileID: 866918385}
+  - component: {fileID: 866918386}
+  - component: {fileID: 866918387}
   m_Layer: 9
   m_Name: Bow
   m_TagString: Untagged
@@ -3013,9 +3009,79 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 560f00b807ed047289388ba22549f851, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 150
   arrow: {fileID: 7004706666913722411, guid: dc91225e6006c46739061a3042832d5c, type: 3}
-  pause: 0
+--- !u!50 &866918386
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 866918382}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 2.5
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 3
+--- !u!61 &866918387
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 866918382}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &1008039752
 GameObject:
   m_ObjectHideFlags: 0
@@ -4297,8 +4363,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   defaultSprite: {fileID: 21300000, guid: 52355f457e3c8408588f07f45e1c0da3, type: 3}
   hitSprite: {fileID: 21300000, guid: 3ab1e84f115b74cf8abb6683f4f06c15, type: 3}
-  on: 1
-  time: 60
 --- !u!1 &1385500372
 GameObject:
   m_ObjectHideFlags: 0
@@ -4339,7 +4403,6 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 2065a123c58674605948f470f3ad226b, type: 3}
   - {fileID: 21300000, guid: 4c9feedac913246ae9d674ba35ec2e1f, type: 3}
   - {fileID: 21300000, guid: 7d5cf0d0467044af4816bded70659b95, type: 3}
-  score: 0
   firstDigit: {fileID: 249114713}
   secondDigit: {fileID: 670562720}
 --- !u!4 &1385500374
@@ -4388,13 +4451,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f0c972c17cda43c8b146e15ecfdc747, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerShots: 0
   red: {fileID: 1244012056}
   yellow: {fileID: 798975044}
   green: {fileID: 180838342}
   blue: {fileID: 820585305}
   start: {fileID: 6565486004563249493}
   end: {fileID: 1108458724626463395}
+  show: 0
 --- !u!4 &1992230355
 Transform:
   m_ObjectHideFlags: 0

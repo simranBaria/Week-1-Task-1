@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class Arrow : MonoBehaviour
 {
-    public float turnSpeed = 150;
-    public float shootSpeed = 25;
-    public bool shot = false;
+    float turnSpeed = -150, shootSpeed = 2000, direction;
+    bool shot = false;
     Rigidbody2D rigidbody;
-
+    bool rotate = true;
 
     // Start is called before the first frame update
     void Start()
@@ -21,13 +20,18 @@ public class Arrow : MonoBehaviour
     void Update()
     {
         // Only rotate if not shot
-        if (!shot)
+        if (rotate)
         {
-            float direction = Input.GetAxis("Horizontal");
+            // Rotate based on player input
+            direction = Input.GetAxis("Horizontal");
             transform.Rotate(0, 0, direction * turnSpeed * Time.deltaTime);
 
-            // Shoot if the player presses space
-            if (Input.GetKeyDown(KeyCode.Space)) shot = true;
+            // Shoot if the player presses space and the targets are not displaying shooting order
+            // This is to prevent the player from spamming targets while the game is trying to show them the correct order
+            if (!GameObject.Find("Simon Says").GetComponent<SimonSays>().show)
+            {
+                if (Input.GetKeyDown(KeyCode.Space)) shot = true;
+            }
         }
     }
 
@@ -61,8 +65,8 @@ public class Arrow : MonoBehaviour
                 break;
         }
 
-        // Add to the shot order
-        GameObject.Find("Simon Says").GetComponent<SimonSays>().AddToOrder(objectShot);
+        // Check if that was correct
+        GameObject.Find("Simon Says").GetComponent<SimonSays>().CheckTarget(objectShot);
     }
 
     private void FixedUpdate()
@@ -70,9 +74,21 @@ public class Arrow : MonoBehaviour
         // Only move if shot
         if(shot)
         {
-            // Shoot the arrow
-            Vector2 direction = transform.right;
-            rigidbody.MovePosition(rigidbody.position + direction * shootSpeed * Time.deltaTime);
+            // Move the arrow
+            Vector2 force = transform.right * shootSpeed * Time.deltaTime;
+            rigidbody.AddForce(force);
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        // Only rotate the arrow if it is on the bow trigger
+        rotate = true;
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        // The arrow left the bow, do not rotate
+        rotate = false;
     }
 }

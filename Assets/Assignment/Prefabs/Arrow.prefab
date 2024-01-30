@@ -48,9 +48,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab8bef3fa2d1c44fc9197be2ab6a762e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turnSpeed: 150
-  shootSpeed: 25
-  shot: 0
+  rotate: 1
+  pause: 1
 --- !u!50 &7162403865280348349
 Rigidbody2D:
   serializedVersion: 4
@@ -65,7 +64,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 2.5
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:

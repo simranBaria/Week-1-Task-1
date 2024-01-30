@@ -5,9 +5,8 @@ using UnityEngine;
 public class Target : MonoBehaviour
 {
     public Sprite defaultSprite, hitSprite;
-    public bool on = false;
-    public int time = 60;
-    int counter;
+    bool on = false;
+    int time = 60, counter;
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +18,7 @@ public class Target : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Keep the light on for a few frames so the player can see
+        // Keep the target on for a few frames so the player can see
         if (on) counter--;
         if (counter == 0)
         {
@@ -47,7 +46,7 @@ public class Target : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        // Change sprite when the target is hit
+        // Turn the target on when hit
         TurnOn();
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class Score : MonoBehaviour
 {
     public Sprite[] sprites = new Sprite[10];
-    public int score = 0;
+    int score = 0;
     public GameObject firstDigit, secondDigit;
 
     // Start is called before the first frame update
@@ -40,6 +40,7 @@ public class Score : MonoBehaviour
 
     void SetScore(int digit1, int digit2)
     {
+        // Set the sprites to represent the score
         firstDigit.GetComponent<SpriteRenderer>().sprite = sprites[digit1];
         secondDigit.GetComponent<SpriteRenderer>().sprite = sprites[digit2];
     }

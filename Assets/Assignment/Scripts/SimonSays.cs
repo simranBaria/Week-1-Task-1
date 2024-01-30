@@ -5,15 +5,16 @@ using UnityEngine;
 public class SimonSays : MonoBehaviour
 {
     List<int> lightOrder = new List<int>();
-    public int playerShots = 0;
+    int playerShots = 0;
     public GameObject red, yellow, green, blue, start, end;
     int current = 0, time = 120, counter = 0;
-    bool show = false, gameStart = false, gameEnd = false;
+    public bool show = false;
+    bool gameStart = false, gameEnd = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        // Display the start UI
+        // Display the start UI and turn off the lose screen UI
         start.SetActive(true);
         end.SetActive(false);
     }
@@ -21,6 +22,7 @@ public class SimonSays : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Check if the game started
         if (gameStart) {
             // Show lights
             if (show)
@@ -59,40 +61,41 @@ public class SimonSays : MonoBehaviour
         }
         else
         {
+            // Check if the player lost
             if (Input.GetKeyDown(KeyCode.Space) && !gameEnd)
             {
+                // End screen is not active
+                // Turn off the start screen and start the game
                 start.SetActive(false);
                 StartGame();
             }
             else if (Input.GetKeyDown(KeyCode.Space) && gameEnd)
             {
+                // End screen is active
+                // Turn it off and reset the game
                 end.SetActive(false);
                 ResetGame();
             }
         }
     }
 
-    private void AddLights()
+    private void AddLight()
     {
         // Add a random colour next to the sequence
         lightOrder.Add(Random.Range(1, 4));
     }
 
-    public void AddToOrder(int objectHit)
+    public void CheckTarget(int objectHit)
     {
         // Check if the player hit the right target
         if (objectHit == lightOrder[playerShots])
         {
-            //print("correct");
+            // Game continues
             playerShots++;
             GameObject.Find("Bow").GetComponent<Bow>().DrawArrow();
             CheckIfDone();
         }
-        else
-        {
-            //print("player missed");
-            EndGame();
-        }
+        else EndGame();
     }
 
 
@@ -101,8 +104,8 @@ public class SimonSays : MonoBehaviour
         // Clear the shot order the player took
         playerShots = 0;
 
-        // Add another light
-        AddLights();
+        // Add another light and show the next sequence
+        AddLight();
         current = 0;
         show = true;
 
@@ -121,7 +124,6 @@ public class SimonSays : MonoBehaviour
         // Player lost
         //print("player lost");
         end.SetActive(true);
-        GameObject.Find("Bow").GetComponent<Bow>().pause = true;
         gameStart = false;
         gameEnd = true;
     }
@@ -131,9 +133,8 @@ public class SimonSays : MonoBehaviour
         // Start the game
         gameStart = true;
         show = true;
-        GameObject.Find("Bow").GetComponent<Bow>().pause = false;
         GameObject.Find("Bow").GetComponent<Bow>().DrawArrow();
-        AddLights();
+        AddLight();
         counter = time;
     }
 
